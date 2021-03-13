@@ -1,11 +1,16 @@
 name: osc
+version: 1.0.0
+
 description: A simple Open Sound Control (OSC) protocol implementation for Dart.
-version: 0.0.4
+homepage: https://github.com/pq/osc
 
 environment:
-  sdk: '>=2.2.2 <3.0.0'
+  sdk: '>=2.12.0-0 <3.0.0'
+
+dependencies:
+  collection: ^1.15.0
 
 dev_dependencies:
-  ansicolor: ^1.0.0
+  ansicolor: ^2.0.0-nullsafety.0
   pedantic: ^1.0.0
-  test: ^1.5.0
+  test: ^1.16.0-nullsafety

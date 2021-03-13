@@ -1,3 +1,7 @@
+// Copyright (c) 2021, Google LLC. Please see the AUTHORS file
+// for details. All rights reserved. Use of this source code is governed by a
+// BSD-style license that can be found in the LICENSE file.
+
 import 'package:collection/collection.dart';
 
 import 'convert.dart';
@@ -6,7 +10,6 @@ final _illegalAddressChars = RegExp('[#*,?]');
 
 //' ', '#', '*', ',', '?', '[', ']', '{', '}'
 bool _isValid(String address) =>
-    address != null &&
     address.isNotEmpty &&
     address[0] == '/' &&
     !_illegalAddressChars.hasMatch(address);
@@ -17,7 +20,7 @@ class OSCMessage {
 
   final _builder = OSCMessageBuilder();
 
-  OSCMessage(this.address, {this.arguments}) {
+  OSCMessage(this.address, {required this.arguments}) {
     if (!_isValid(address)) {
       throw ArgumentError('Invalid address: $address');
     }
